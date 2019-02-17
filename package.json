@@ -1,0 +1,37 @@
+{
+  "name": "electron-vue-example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build:electron": "vue-cli-service build:electron",
+    "serve:electron": "vue-cli-service serve:electron",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . social-data --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Social Data\"",    
+    "package-linux": "electron-packager . social-data --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/linux/logo.png --prune=true --out=release-builds"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "vue": "^2.5.17",
+    "vue-json-csv": "^1.2.3",
+    "vue-json-excel": "^0.2.98",
+    "vue-query-builder": "^0.7.1",
+    "vue-router": "^3.0.1",
+    "vue-slide-bar": "^1.1.9",
+    "vue-spinners": "^1.0.2",
+    "vue-tables-2": "^1.4.70",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "electron": "^2.0.2",
+    "electron-packager": "^13.0.1",
+    "vue-cli-plugin-electron-builder": "^1.0.1",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "main": "dist_electron/bundled/background.js"
+}
